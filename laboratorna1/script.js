@@ -7,11 +7,15 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
     "angle",
   ];
 
+  const anglesTypes = ["adjacent angle", "opposite angle", "angle"];
+
   const isValidType = (type) => validTypes.includes(type);
 
   const isValidValue = (val) => val > 0 && typeof val === "number";
 
-  const areValidAngles = (alpha, beta) => alpha < 90 && beta < 90;
+  const isAngle = (type) => anglesTypes.includes(type);
+
+  const isValidAngle = (angle) => angle < 90;
 
   const isValidTriangle = (a, b, c) => a + b > c && a + c > b && c + b > a;
 
@@ -31,15 +35,24 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
   if (!isValidValue(val1) || !isValidValue(val2)) {
     return "Invalid input: Values must be positive number and non-zero.";
   }
-  if (
-    (type1 === "hypotenuse" && type2 === "hypotenuse") ||
-    (type1 === "angle" && type2 === "angle") ||
-    (type1 === "adjacent angle" && type2 === "opposite angle")
-  ) {
+
+  if (type1 === "hypotenuse" && type2 === "hypotenuse") {
     console.log(
-      "Invalid input: Two hypotenuses or two angles are provided. Please provide valid types in valid order."
+      "Invalid input: Two hypotenuses are provided. Please provide valid types in valid order."
     );
     return "failed";
+  }
+  if (isAngle(type1) && isAngle(type2)) {
+    console.log(
+      "Invalid input: Two angles are provided. Please provide valid types in valid order."
+    );
+    return "failed";
+  }
+  if (
+    (isAngle(type1) && !isValidAngle(val1)) ||
+    (isAngle(type2) && !isValidAngle(val2))
+  ) {
+    return "The angles of the triangle must be acute";
   }
 
   switch (type1) {
@@ -133,7 +146,8 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
   if (!isValidTriangle(a, b, c)) {
     return "Such a triangle does not exist, since any side of the triangle must be less than the sum of its other two sides.";
   }
-  if (!areValidAngles(alpha, beta)) {
+
+  if (!isValidAngle(alpha) || !isValidAngle(beta)) {
     return "The angles of the triangle must be acute";
   }
 
@@ -155,7 +169,6 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
   );
   return "success";
 }
-
 console.log(`Instruction for using the 'triangle' function:
 
 1. Initial values:
