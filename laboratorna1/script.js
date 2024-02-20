@@ -83,6 +83,9 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
           c = a / Math.sin(toRadians(alpha));
           b = Math.sqrt(c * c - a * a);
           break;
+        default:
+          console.log("Not enough information to perform calculations");
+          return "failed";
       }
       break;
     case "hypotenuse":
@@ -100,6 +103,9 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
           a = c * Math.sin(toRadians(alpha));
           b = Math.sqrt(c * c - a * a);
           break;
+        default:
+          console.log("Not enough information to perform calculations");
+          return "failed";
       }
       break;
     case "adjacent angle":
@@ -116,6 +122,9 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
           a = c * Math.sin(toRadians(alpha));
           b = Math.sqrt(c * c - a * a);
           break;
+        default:
+          console.log("Not enough information to perform calculations");
+          return "failed";
       }
       break;
     case "opposite angle":
@@ -132,6 +141,9 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
           a = c * Math.cos(toRadians(alpha));
           b = Math.sqrt(c * c - a * a);
           break;
+        default:
+          console.log("Not enough information to perform calculations");
+          return "failed";
       }
       break;
     case "angle":
