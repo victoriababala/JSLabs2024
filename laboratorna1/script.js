@@ -17,6 +17,10 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
 
   const isValidAngle = (angle) => angle < 90;
 
+  const isLeg = (type) => type === "leg";
+
+  const isHypotenuse = (type) => type === "hypotenuse";
+
   const isValidTriangle = (a, b, c) => a + b > c && a + c > b && c + b > a;
 
   const toDegrees = (angle) => angle * (180 / Math.PI);
@@ -41,6 +45,12 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
       "Invalid input: Two hypotenuses are provided. Please provide valid types in valid order."
     );
     return "failed";
+  }
+  if (
+    (isHypotenuse(type1) && isLeg(type2) && val1 - val2 <= 0) ||
+    (isHypotenuse(type2) && isLeg(type1) && val2 - val1 <= 0)
+  ) {
+    return "Hypotenuse must be greater than the leg";
   }
   if (isAngle(type1) && isAngle(type2)) {
     console.log(
