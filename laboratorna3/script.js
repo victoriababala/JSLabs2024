@@ -54,7 +54,7 @@ function Truck(color, weight, avgSpeed, brand, model) {
       console.log(message);
     }
   };
-}
+};
 //1.2.8
 Truck.prototype.AssignDriver = function (name, nightDriving, experience) {
   this.driver = {
@@ -316,7 +316,7 @@ parallelogramObj.info();
 //1.2.25
 function Triangular(a = 3, b = 4, c = 5) {
   return { a, b, c };
-}
+};
 //1.2.26
 const triangle1 = Triangular();
 console.log(triangle1);
@@ -330,7 +330,7 @@ function PiMultiplier(number) {
   return function () {
     return number * Math.PI;
   };
-}
+};
 //1.2.28
 const doublePi = PiMultiplier(2);
 console.log("2*pi result = ", doublePi());
@@ -350,7 +350,7 @@ function Painter(color) {
       console.log("No 'type' property occurred!");
     }
   };
-}
+};
 //1.2.30
 const PaintBlue = Painter("blue");
 const PaintRed = Painter("red");
