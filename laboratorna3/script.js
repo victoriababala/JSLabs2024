@@ -176,10 +176,10 @@ class Rhombus extends Square {
   }
   //1.2.22
   get a() {
-    return super.a;
+    return this._a;
   }
   set a(p) {
-    super.a = p;
+    this._a = p;
   }
   get alpha() {
     return this._alpha;
@@ -307,7 +307,7 @@ Parallelogram.help();
 //1.2.24
 const squareObj = new Square(5);
 const rectangleObj = new Rectangle(6, 10);
-const rhombusObj = new Rhombus(5, 110, 70);
+const rhombusObj = new Rhombus(8, 110, 70);
 const parallelogramObj = new Parallelogram(7, 8, 100, 80);
 squareObj.info();
 rectangleObj.info();
@@ -316,7 +316,7 @@ parallelogramObj.info();
 //1.2.25
 function Triangular(a = 3, b = 4, c = 5) {
   return { a, b, c };
-};
+}
 //1.2.26
 const triangle1 = Triangular();
 console.log(triangle1);
@@ -330,7 +330,7 @@ function PiMultiplier(number) {
   return function () {
     return number * Math.PI;
   };
-};
+}
 //1.2.28
 const doublePi = PiMultiplier(2);
 console.log("2*pi result = ", doublePi());
@@ -350,7 +350,7 @@ function Painter(color) {
       console.log("No 'type' property occurred!");
     }
   };
-};
+}
 //1.2.30
 const PaintBlue = Painter("blue");
 const PaintRed = Painter("red");
