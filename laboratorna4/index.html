@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays Sorting</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Arrays Sorting</h1>
+      <h4>
+        The result of sorting by different methods and the number of operations
+        performed during their execution will be displayed in the console
+      </h4>
+      <div class="button-container">
+        <button onclick="sortSparseArray()">Sort Sparse Array</button>
+        <button onclick="sortDenseArray()">Sort Dense Array</button>
+        <button onclick="clearConsole()">Clear</button>
+      </div>
+
+      <div class="radio-container">
+        <input
+          type="radio"
+          id="deleteUndefined"
+          name="sortingType"
+          value="deleteUndefined"
+          checked
+        />
+        <label for="deleteUndefined">Delete Undefined Elements</label>
+      </div>
+      <div class="radio-container">
+        <input
+          type="radio"
+          id="moveToEnd"
+          name="sortingType"
+          value="moveToEnd"
+        />
+        <label for="moveToEnd">Move Undefined Elements to End</label>
+      </div>
+
+      <div id="arrayOutput" class="output"></div>
+    </div>
+
+    <script src="ArraySorting.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
